@@ -1,8 +1,6 @@
-Rails.application.config.before_configuration do
-  p 'ykitazume init'
-  if File.exists?("/data/eyrails/shared/config/env.custom")
-    Dotenv.load('/data/eyrails/shared/config/env.custom')
+Rails.application.config.before_initialize do
+  env_file_path = "/data/eyrails/shared/config/env.custom"
+  if File.exists?(env_file_path)
+    Dotenv.load(env_file_path)
   end
-  p ENV['HOGE']
-  p ENV['RAVEN']
 end
