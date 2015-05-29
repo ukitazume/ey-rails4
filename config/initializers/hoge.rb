@@ -1,3 +1,4 @@
+require 'yaml'
 Rails.application.config.to_prepare do
   class Hoge
     hoge = Rails.application.secrets.hoge_key
