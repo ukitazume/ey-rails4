@@ -22,5 +22,8 @@ module EyRails4
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    if File.exists?(File.expand_path('config/custom.env', __FILE__))
+      Dotenv.load(File.expand_path('config/custom.env', __FILE__))
+    end
   end
 end
