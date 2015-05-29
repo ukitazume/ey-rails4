@@ -6,12 +6,12 @@ require 'yaml'
 #     fail 'hogehogge' if HOGE.nil?
 #   end
 # end
-Rails.application.config.before_initialize do
-  class Hoge1
-    HOGE = Rails.application.secrets.hoge_key
-    fail 'hogehogge' if HOGE.nil?
-  end
-end
+# Rails.application.config.before_initialize do
+#   class Hoge1
+#     HOGE = Rails.application.secrets.hoge_key
+#     fail 'hogehogge' if HOGE.nil?
+#   end
+# end
 
 Rails.application.config.to_prepare do
   class Hoge2
