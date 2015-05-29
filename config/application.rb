@@ -6,6 +6,10 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+if File.exists?("/data/eyrails/shared/config/custom.env")
+  Dotenv.load('/data/eyrails/shared/config/custom.env')
+end
+
 module EyRails4
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
